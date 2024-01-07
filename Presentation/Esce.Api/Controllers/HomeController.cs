@@ -8,5 +8,9 @@ namespace Esce.Api.Controllers
         {
             return View();
         }
+        public HomeController()
+        {
+            
+        }
     }
 }
