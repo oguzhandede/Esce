@@ -9,15 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A4DE3C8C-7442-4D0C-B902-DC9D5B448998}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esce.Domain", "Core\Esce.Domain\Esce.Domain.csproj", "{D3F9B0F3-D0C0-4605-BEBF-C2238ABA4A8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Esce.Domain", "Core\Esce.Domain\Esce.Domain.csproj", "{D3F9B0F3-D0C0-4605-BEBF-C2238ABA4A8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esce.Application", "Core\Esce.Application\Esce.Application.csproj", "{AA51AA86-6C10-46A3-8208-5D38B79F495F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Esce.Application", "Core\Esce.Application\Esce.Application.csproj", "{AA51AA86-6C10-46A3-8208-5D38B79F495F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esce.Infrastructure", "Infrastructure\Esce.Infrastructure\Esce.Infrastructure.csproj", "{4821C827-D837-4AF9-9865-82814DC3366D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Esce.Infrastructure", "Infrastructure\Esce.Infrastructure\Esce.Infrastructure.csproj", "{4821C827-D837-4AF9-9865-82814DC3366D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esce.Persistence", "Infrastructure\Esce.Persistence\Esce.Persistence.csproj", "{AEA5CA54-2129-4A9A-B607-7E37BC55D3CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Esce.Persistence", "Infrastructure\Esce.Persistence\Esce.Persistence.csproj", "{AEA5CA54-2129-4A9A-B607-7E37BC55D3CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esce.Api", "Presentation\Esce.Api\Esce.Api.csproj", "{D6378A82-3A0C-4C63-9F0F-7FA9EA1775B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Esce.Api", "Presentation\Esce.Api\Esce.Api.csproj", "{D6378A82-3A0C-4C63-9F0F-7FA9EA1775B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
