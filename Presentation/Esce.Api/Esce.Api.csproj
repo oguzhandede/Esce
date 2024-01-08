@@ -12,7 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Folder Include="bin\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Esce.Application\Esce.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Esce.Persistence\Esce.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

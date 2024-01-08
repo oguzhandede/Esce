@@ -10,5 +10,7 @@
         public bool IsDeleted { get; set; } = false;
         public Guid? DeletedBy { get; set; }
         public DateTime? DeletedDate { get; set; }
+        public required Guid CompanyId { get; set; }
+        public required Guid BranchId { get; set; }
     }
 }

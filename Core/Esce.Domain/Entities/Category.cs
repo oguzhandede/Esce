@@ -14,7 +14,6 @@ namespace Esce.Domain.Entities
         public required string CategoryName { get; set; }
         public required string CategoryImagePath { get; set; }
         public required string CategoryDescription { get; set; }
-        public required Guid CompanyId { get; set; }
-        public required Guid BranchId { get; set; }
+  
     }
 }
