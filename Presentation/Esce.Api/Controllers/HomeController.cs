@@ -1,5 +1,6 @@
-﻿using Esce.Persistence.Repositories;
-using Microsoft.AspNetCore.Http;
+﻿using Esce.Application.Interface.Repositories;
+using Esce.Application.Interface.UnitOfWorks;
+using Esce.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Esce.Api.Controllers
@@ -8,16 +9,24 @@ namespace Esce.Api.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private readonly ProductRepository _productRepository;
+        readonly private IRoleReadRepository _roleReadRepository;
+        readonly private IRoleWriteRepository _roleWriteRepository;
+        readonly private IUnitOfWork _IUnitOfWork;
 
-        public HomeController(ProductRepository productRepository)
+        public HomeController(IRoleWriteRepository roleWriteRepository, IRoleReadRepository roleReadRepository)
         {
-            _productRepository=productRepository;
+            _roleReadRepository= roleReadRepository;
+            _roleWriteRepository= roleWriteRepository;
         }
+
         [HttpGet]
-        public IActionResult GelProducts()
+        public async void Index()
         {
-            return Ok();
+            //    var roles = await _roleReadRepository.GetAll();
+
+
+            //    return View();
         }
+
     }
 }

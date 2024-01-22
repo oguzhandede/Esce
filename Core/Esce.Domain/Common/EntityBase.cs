@@ -2,7 +2,8 @@
 {
     public class EntityBase : IEntityBase
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
+        public int IdInt { get; set; }
         public Guid CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public Guid UpdatedBy { get; set; }
