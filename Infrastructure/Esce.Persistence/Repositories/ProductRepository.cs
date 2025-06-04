@@ -7,6 +7,7 @@ namespace Esce.Persistence.Repositories
 {
     public class ProductRepository : IProductRepository
     {
+
         private readonly PostgreSqlDbContext _context;
 
         public ProductRepository(PostgreSqlDbContext context)
@@ -26,5 +27,6 @@ namespace Esce.Persistence.Repositories
         }
 
         public Task<int> SaveChangesAsync() => _context.SaveChangesAsync();
+
     }
 }

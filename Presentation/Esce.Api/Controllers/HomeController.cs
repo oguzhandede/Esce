@@ -1,5 +1,9 @@
+
 using Esce.Application.Features.Products.Queries;
 using MediatR;
+
+﻿using Esce.Application.Interface.Repository;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +22,9 @@ namespace Esce.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
+
             var products = await _mediator.Send(new GetProductListQuery());
+
             return Ok(products);
         }
     }

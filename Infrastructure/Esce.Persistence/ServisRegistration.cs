@@ -10,10 +10,13 @@ namespace Esce.Persistence
     {
         public static void AddPersistenceServices(this IServiceCollection services, string connectionString)
         {
+
             services.AddDbContext<PostgreSqlDbContext>(options =>
                 options.UseNpgsql(connectionString));
 
             services.AddScoped<IProductRepository, ProductRepository>();
+
+          
         }
     }
 }

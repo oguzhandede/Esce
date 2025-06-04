@@ -11,7 +11,10 @@ namespace Esce.Domain.Entities
     {
         public string Title {  get; set; }
         public string Description { get; set; }
-        public string CategoryId { get; set; }
+        /// <summary>
+        /// Identifier of the related <see cref="Category"/>.
+        /// </summary>
+        public int CategoryId { get; set; }
 
         public Category Category { get; set; }
     }
