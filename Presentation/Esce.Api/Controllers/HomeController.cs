@@ -1,4 +1,4 @@
-﻿using Esce.Persistence.Repositories;
+using Esce.Application.Interface.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +8,11 @@ namespace Esce.Api.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private readonly ProductRepository _productRepository;
+        private readonly IProductRepository _productRepository;
 
-        public HomeController(ProductRepository productRepository)
+        public HomeController(IProductRepository productRepository)
         {
-            _productRepository=productRepository;
+            _productRepository = productRepository;
         }
         [HttpGet]
         public IActionResult GetProducts()
