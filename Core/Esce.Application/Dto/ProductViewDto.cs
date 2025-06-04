@@ -8,7 +8,7 @@ namespace Esce.Application.Dto
 {
     public class ProductViewDto
     {
-        public required Guid ProductGuid { get; set; } = new Guid();
+        public required Guid ProductGuid { get; set; } = Guid.NewGuid();
         public required string ProductName { get; set; }
 
     }
