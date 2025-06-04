@@ -1,4 +1,5 @@
-using Esce.Application.Interface.Repository;
+using Esce.Application.Features.Products.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,16 +9,17 @@ namespace Esce.Api.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IMediator _mediator;
 
-        public HomeController(IProductRepository productRepository)
+        public HomeController(IMediator mediator)
         {
-            _productRepository = productRepository;
+            _mediator = mediator;
         }
         [HttpGet]
-        public IActionResult GetProducts()
+        public async Task<IActionResult> GetProducts()
         {
-            return Ok();
+            var products = await _mediator.Send(new GetProductListQuery());
+            return Ok(products);
         }
     }
 }
