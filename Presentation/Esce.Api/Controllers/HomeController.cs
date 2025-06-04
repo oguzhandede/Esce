@@ -1,4 +1,6 @@
+
 ﻿using Esce.Application.Interface.Repository;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +14,10 @@ namespace Esce.Api.Controllers
 
         public HomeController(IProductRepository productRepository)
         {
-            _productRepository=productRepository;
+            _productRepository = productRepository;
         }
         [HttpGet]
-        public IActionResult GelProducts()
+        public IActionResult GetProducts()
         {
             var products = _productRepository.GetAll();
             return Ok(products);

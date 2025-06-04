@@ -9,7 +9,7 @@ namespace Esce.Domain.Entities
 {
     public class Product :EntityBase
     {
-        public required Guid ProductGuid { get; set; } = new Guid();
+        public required Guid ProductGuid { get; set; } = Guid.NewGuid();
         public required string ProductBarcode { get; set; } 
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
