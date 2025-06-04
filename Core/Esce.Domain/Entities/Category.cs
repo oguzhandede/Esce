@@ -14,6 +14,11 @@ namespace Esce.Domain.Entities
         public required string CategoryName { get; set; }
         public required string CategoryImagePath { get; set; }
         public required string CategoryDescription { get; set; }
+
+        /// <summary>
+        /// Collection of product details belonging to this category.
+        /// </summary>
+        public ICollection<ProductDetail> ProductDetails { get; set; } = new List<ProductDetail>();
   
     }
 }
