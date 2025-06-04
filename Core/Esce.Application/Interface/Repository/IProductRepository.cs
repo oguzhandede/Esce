@@ -1,15 +1,16 @@
-﻿using Esce.Domain.Entities;
-using System;
+using Esce.Domain.Entities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Esce.Application.Interface.Repository
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> GetAll();
+
+        Task<IEnumerable<Product>> GetAllAsync();
+        Task<Product?> GetByIdAsync(int id);
+        Task AddAsync(Product product);
+        Task<int> SaveChangesAsync();
 
     }
 }

@@ -1,19 +1,32 @@
-﻿using Esce.Application.Interface.Repository;
+using Esce.Application.Interface.Repository;
 using Esce.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Esce.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Esce.Persistence.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        public IEnumerable<Product> GetAll()
+
+        private readonly PostgreSqlDbContext _context;
+
+        public ProductRepository(PostgreSqlDbContext context)
         {
-            // TODO: Connect to data source
-            return new List<Product>();
+            _context = context;
         }
+
+        public async Task<IEnumerable<Product>> GetAllAsync() =>
+            await _context.Products.AsNoTracking().ToListAsync();
+
+        public async Task<Product?> GetByIdAsync(int id) =>
+            await _context.Products.FindAsync(id);
+
+        public async Task AddAsync(Product product)
+        {
+            await _context.Products.AddAsync(product);
+        }
+
+        public Task<int> SaveChangesAsync() => _context.SaveChangesAsync();
+
     }
 }

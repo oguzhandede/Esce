@@ -1,24 +1,27 @@
-﻿using Esce.Persistence;
+using Esce.Persistence;
+using FluentValidation;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddPersistenceServices();
+var env = builder.Environment;
+builder.Configuration
+    .SetBasePath(env.ContentRootPath)
+    .AddJsonFile("appsettings.json", optional: false)
+    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
+
+builder.Services.AddPersistenceServices(connectionString);
+builder.Services.AddMediatR(typeof(Program));
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-var env = builder.Environment;
-builder.Configuration
-    .SetBasePath(env.ContentRootPath) // Uygulamanın kök dizinini yapılandırma dosyalarını aramak için belirler.
-    .AddJsonFile("appsettings.json", optional: false) // Ana yapılandırma dosyası (appsettings.json) yüklenir. Bulunmazsa hata verir.
-    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true); // Ortama özgü yapılandırma dosyası yüklenir (örneğin, appsettings.Development.json). Bulunmazsa sorun çıkarmaz.
-
-
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -26,7 +29,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

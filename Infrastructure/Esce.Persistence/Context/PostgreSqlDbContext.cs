@@ -1,13 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Esce.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Esce.Persistence.Context
 {
-    public class PostgreSqlDbContext 
+    /// <summary>
+    ///     Application database context configured for PostgreSQL.
+    /// </summary>
+    public class PostgreSqlDbContext : DbContext
     {
-        public PostgreSqlDbContext() { }
+        public PostgreSqlDbContext(DbContextOptions<PostgreSqlDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Product> Products => Set<Product>();
+        public DbSet<Category> Categories => Set<Category>();
+        public DbSet<Brand> Brands => Set<Brand>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
