@@ -10,5 +10,10 @@ namespace Esce.Persistence.Repositories
 {
     public class ProductRepository : IProductRepository
     {
+        public IEnumerable<Product> GetAll()
+        {
+            // TODO: Connect to data source
+            return new List<Product>();
+        }
     }
 }
