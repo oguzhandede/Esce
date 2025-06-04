@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Esce.Application.Interface.Repository
 {
-    public interface IProductRepository 
+    public interface IProductRepository
     {
-
-
+        IEnumerable<Product> GetAll();
 
     }
 }
