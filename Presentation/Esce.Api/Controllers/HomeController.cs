@@ -15,7 +15,7 @@ namespace Esce.Api.Controllers
             _productRepository=productRepository;
         }
         [HttpGet]
-        public IActionResult GelProducts()
+        public IActionResult GetProducts()
         {
             return Ok();
         }
